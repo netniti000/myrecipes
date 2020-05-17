@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChefsListingTest < ActionDispatch::IntegrationTest
+class ChefsTestListing < ActionDispatch::IntegrationTest
   def setup
     @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com",
                     password: "password", password_confirmation: "password")
