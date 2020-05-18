@@ -2,29 +2,29 @@ require 'test_helper'
 
 class ChefTest < ActiveSupport::TestCase
     
-    def setup
-        @chef = Chef.new(chefname: "aaaddd", email: "aaaddd@email.com",password: "password", password_confirmation: "password")
-    end
-    
-    test "should be valid" do
-        assert @chef.valid?
-    end
-
-    test "name should be present" do
-        @chef.chefname = " "
-        assert_not @chef.valid?
-    end
-    
-    test "name should be less than 30 characters" do
-        @chef.chefname = "a" * 31
-        assert_not @chef.valid?
-    end
-    
-    test "email should be present" do
-     @chef.email = " "
-     assert_not @chef.valid?
+  def setup
+      @chef = Chef.new(chefname: "aaaddd", email: "aaaddd@email.com",password: "password", password_confirmation: "password")
   end
   
+  test "should be valid" do
+      assert @chef.valid?
+  end
+
+  test "name should be present" do
+      @chef.chefname = " "
+      assert_not @chef.valid?
+  end
+  
+  test "name should be less than 30 characters" do
+      @chef.chefname = "a" * 31
+      assert_not @chef.valid?
+  end
+  
+  test "email should be present" do
+   @chef.email = " "
+   assert_not @chef.valid?
+  end
+
   test "email should not be too long" do
     @chef.email = "a" * 245 + "@example.com"
     assert_not @chef.valid?
